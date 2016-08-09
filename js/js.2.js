@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//Canvas stuff
+	
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
@@ -95,8 +95,7 @@ $(document).ready(function(){
 		//finally lets display the score
 		score = 0;
 		
-		//Lets move the snake now using a timer which will trigger the paint function
-		//every 60ms
+		
 		if(typeof game_loop != "undefined") clearInterval(game_loop);
 		game_loop = setInterval(paint, 60);
 	}
@@ -110,7 +109,7 @@ $(document).ready(function(){
 		//键盘控制
 		$(document).keydown(function(e){
 		var key = e.which;
-		//We will add another clause to prevent reverse gear
+		
 		if(key == "37" && d != "right") d = "left";
 		else if(key == "38" && d != "down") d = "up";
 		else if(key == "39" && d != "left") d = "right";
